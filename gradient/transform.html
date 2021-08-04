@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* .xyz {
+        height: 200px;
+        width: 100px;
+        background: aqua;
+        transition-duration: 600ms;
+        transition-property: all;
+        transition-timing-function: ease-in;
+    }
+
+    .xyz:hover {
+        width: 500px;
+        background: crimson;
+    } */
+    body {
+      padding: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+      overflow: scroll;
+    }
+
+    .box {
+      /* overflow: scroll; */
+      background: gray;
+      width: 102px;
+      height: 102px;
+      border: 2px solid black;
+      margin: 10px;
+      display: grid;
+      place-items: center;
+    }
+
+    .inner {
+      width: 100px;
+      height: 100px;
+      box-sizing: border-box;
+      padding: 10px;
+      background: aqua;
+      transform: rotateZ(5deg);
+      transition: 1sec all;
+    }
+
+    .one,
+    .two,
+    .three,
+    .four,
+    .five,
+    .six {
+      transform-origin: left bottom;
+      /* transform: matrix(0, 0, 0, 0, 0, 0); */
+    }
+
+    .one:hover {
+      transform: perspective(80px) rotateX(45deg);
+    }
+
+    .two:hover {
+      transform: perspective(80px) rotateX(-45deg);
+    }
+
+    .three:hover {
+      transform: perspective(80px) rotateY(45deg);
+    }
+
+    .four:hover {
+      transform: perspective(80px) rotateY(-45deg);
+    }
+
+    .five:hover {
+      transform: perspective(80px) rotateZ(45deg);
+    }
+
+    .six:hover {
+      transform: perspective(8px) rotateZ(-45deg);
+    }
+  </style>
+
+  <body>
+    <div class="box">
+      <div class="inner one">RotateX(+)</div>
+    </div>
+    <div class="box">
+      <div class="inner two">RotateX(-)</div>
+    </div>
+    <div class="box">
+      <div class="inner three">rotateY(+)</div>
+    </div>
+    <div class="box">
+      <div class="inner four">rotateY(-)</div>
+    </div>
+    <div class="box">
+      <div class="inner five">rotateZ(+)</div>
+    </div>
+    <div class="box">
+      <div class="inner six">rotateZ(-)</div>
+    </div>
+  </body>
+</html>

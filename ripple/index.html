@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items: center;
+            flex-direction: column;
+            background: #040d15;
+        }
+        button{
+            overflow: hidden;
+            display:inline-block;
+            padding:1rem 3rem;
+            margin:10px 0;
+            color:#fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 18px;
+            position: relative; 
+            letter-spacing: 2px;
+            border-radius:4px; 
+            background: linear-gradient(90deg,#0162c8,#55e7fc);
+            border:none;
+            outline:none;
+            border:2px solid #0162c8;
+            transition:all 200ms
+        }
+        button:hover{
+            opacity:80%;
+            border:2px solid #fff
+        }
+        a:nth-child(2){
+            background: linear-gradient(90deg,#755bea,#ff72c0);
+            
+        }
+        span{
+            position: absolute;
+            background: #fff;
+            transform:translate(-50%,-50%);
+            pointer-events: none;
+            border-radius: 50%;
+            animation:animate 1000ms linear infinite
+        }
+        @keyframes animate {
+            0%{
+                width:0px;
+                height:0px;
+                opacity: 0.5;
+            }
+            100%{
+                width:500px;
+                height:500px;
+                opacity: 0;
+            }
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <button href="" class="button">Button</a>
+    <button href="" class="button">Button</a>
+    <script>
+        const buttons=document.querySelectorAll("button");
+        buttons.forEach(btn=>{
+            btn.addEventListener("click",function(e){
+                e.preventDefault();
+                // console.log("clientX :-",e.clientX)
+                // console.log("e.target.offsetLeft :-",e.target.offsetLeft)
+                // console.log("e.clientY :-",e.clientY)
+                // console.log("e.target.offsetTop :-",e.target.offsetTop)
+                // console.log("===============")
+                let x=e.clientX-e.target.offsetLeft;
+                let y=e.clientY-e.target.offsetTop;
+                let ripples=document.createElement("span");
+                ripples.style.left=x+"px"
+                ripples.style.top=y+"px"
+                console.log("this",this)
+                this.appendChild(ripples);
+                setTimeout(()=>{
+                    ripples.remove()
+                },1000)
+            })
+        })
+    </script>
+</body>
+</html>

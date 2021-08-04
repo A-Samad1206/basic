@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="table.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Color</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>#ddd</td>
+          <td>
+            <div class="display"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>#dcf5ff</td>
+          <td>
+            <div class="display"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>#00B6FF</td>
+          <td>
+            <div class="display"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script type="text/javascript">
+      var tr = document.querySelectorAll('tbody tr');
+      console.log('tr', tr);
+      // tr.firstElementChild
+      for (i = 0; i < tr.length; i++) {
+        tr[i].children[1].firstElementChild.style.backgroundColor =
+          tr[i].firstElementChild.textContent;
+      }
+    </script>
+  </body>
+</html>

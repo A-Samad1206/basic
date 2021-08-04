@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        display: inline-block;
+        text-decoration: none;
+        font-size: 2rem;
+      }
+      .container {
+        width: 100%;
+        max-height: fit-content;
+        background: crimson;
+        position: relative;
+        display: grid;
+        /* place-items: center; */
+      }
+      nav {
+        display: flex;
+        justify-content: space-around;
+        /* background: rgba(0, 0, 0, 0.5); */
+        padding: 20px;
+        z-index: 10;
+        width: 100%;
+        position: absolute;
+      }
+      .clip {
+        /* z-index: 1; */
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background: rgba(200, 30, 54, 0.1);
+        clip-path: circle(15% at 3px 5px);
+        /* shape-outside: circle(25% at 10px 10px); */
+      }
+      .contant {
+      }
+      a:hover {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <a href="">home</a>
+        <a href="">home</a>
+        <a href="">home</a>
+        <a href="">home</a>
+      </nav>
+      <div class="clip"></div>
+      <div class="contant"></div>
+    </div>
+  </body>
+</html>
