@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        font-size: 20px;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+      }
+
+      #main-content {
+        padding: 10px;
+      }
+
+      p {
+        margin-bottom: 10px;
+      }
+      code {
+        /* color: black; */
+        line-height: 2.5rem;
+      }
+    </style>
+  </head>
+  <body onresize="stickFooterToBottom()">
+    <div id="main-content">
+      <p style="color: blue">
+        This sticky footer example is implemented using html, css and
+        javascript. When page gets loaded or browser window is resized,
+        Javascript function
+        <code><code> stickFooterToBottom()</code></code> runs and calculate the
+        height of view port and body content. If the height of viewport is
+        greater than body height then sets body height to vieport's height and
+        places footer content at the bottom of the body with position absolute
+        ELSE places the footer content just below the <i>main-content</i> div
+        and set position static for footer div.
+      </p>
+      <p>This is some random text.</p>
+    </div>
+    <div
+      id="footer"
+      style="
+        background-color: grey;
+        padding: 10px 0;
+        box-sizing: border-box;
+        text-align: center;
+      "
+    >
+      It is sticky footer. It always sticks to the bottom of the page.
+    </div>
+  </body>
+
+  <script>
+    function stickFooterToBottom() {
+      document.body.style.height = '100%';
+      document.body.style.width = '100%';
+
+      var winHeight = window.innerHeight;
+      var winWidth = window.innerWidth;
+      var bodyHeight = document.body.offsetHeight;
+      var bodyWidth = document.body.offsetWidth;
+      var footerDiv = document.getElementById('footer');
+      var footerHeight = footerDiv.offsetHeight;
+
+      /*
+            If the height of body content is less than viewport height, then set 
+			body's height to viewport's height and fix footer div to the bottom 
+			of the body else set footer's position to static so that it appears 
+			at the bottom naturally.
+            */
+
+      if (winHeight > bodyHeight) {
+        footerDiv.style.position = 'absolute';
+        footerDiv.style.bottom = '0px';
+        document.body.style.height = winHeight + 'px';
+        footerDiv.style.width = bodyWidth + 'px';
+      } else {
+        footerDiv.style.position = 'static';
+        footerDiv.style.width = bodyWidth + 'px';
+      }
+    }
+    stickFooterToBottom();
+  </script>
+</html>
